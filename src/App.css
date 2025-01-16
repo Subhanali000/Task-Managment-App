@@ -1,0 +1,150 @@
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+.app h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 14px 7px 4px rgb(172, 173, 173);
+}
+
+.task-form {
+  background-color: rgb(206, 229, 243);
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid black;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  padding: 30px 1px;
+  width: 90%; /* Make the form responsive to screen size */
+  max-width: 500px; /* Prevent it from growing too wide */
+  margin: 20px auto;
+}
+
+.task-form input,
+.task-form textarea {
+  display: block;
+  padding: 10px 16px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: 3px solid rgb(23, 75, 62);
+  width: 90%; /* Responsive width */
+  max-width: 400px;
+  font-size: 1rem;
+}
+
+.task-form textarea {
+  resize: none; /* Prevent resizing to maintain layout */
+  height: 120px;
+}
+.task-form input:hover{
+  background-color: rgb(255, 255, 255); /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+  box-shadow: 2px 3px 4px rgb(0, 0, 0);
+  border: 3px solid rgb(226, 162, 43);
+}
+.task-form textarea:hover {
+  background-color: rgb(255, 255, 255); /* Darker green on hover */
+  border: 3px solid rgb(226, 162, 43);
+  box-shadow: 2px 3px 4px rgb(0, 0, 0);
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+.container {
+  padding: 0 20px; /* Use padding for spacing instead of fixed values */
+  max-width: 1200px; /* Limit maximum width */
+  margin: 0 auto; /* Center the container */
+}
+
+
+.task-board {
+  display: flex;
+  flex-wrap: wrap; /* Wrap lanes on smaller screens */
+  justify-content: space-between;
+  gap: 20px; /* Add spacing between lanes */
+  margin-top: 20px;
+}
+
+.task-lane {
+  flex: 1 1 calc(33.333% - 20px); /* Responsive lanes */
+  max-width: 30%; /* Ensure max width doesn't exceed */
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.task {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.task-form button {
+  display: block;
+  margin: 15px auto;
+  border-radius: 5px;
+  width: 80%; /* Responsive width */
+  max-width: 150px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: rgb(252, 250, 250);
+  border: 3px solid rgb(0, 0, 0);
+  cursor: pointer;
+}
+.task-form button:hover {
+  box-shadow: 2px 3px 4px rgb(0, 0, 0);
+  background-color: rgb(114, 250, 83); /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+.task-controls button {
+  margin: 5px;
+  cursor: pointer;
+  background-color: rgb(253, 253, 253);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.task-controls button:hover {
+  box-shadow: 2px 3px 4px rgb(0, 0, 0);
+  background-color: rgb(250, 83, 83); /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+@media (max-width: 768px) {
+  .task-lane {
+    flex: 1 1 calc(100% - 20px); /* Make lanes stack vertically */
+    max-width: 100%;
+  }
+
+  .task-form {
+    padding: 10px;
+  }
+
+  .task-form input,
+  .task-form textarea,
+  .task-form button {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .task-board {
+    flex-direction: column; /* Stack lanes vertically */
+    gap: 15px;
+  }
+
+  .task-controls button {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    padding: 3px 8px;
+  }
+}
+.task-form input,
+  .task-form textarea,
+  .task-form button {
+    width: 60%; /* Full width for smaller screens */
+  }
